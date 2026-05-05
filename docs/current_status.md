@@ -10,6 +10,11 @@
 
 The current codebase supports JSON, JSONL, CSV, and other structured record inputs through the loader/detector flow. It can enrich records with heuristic extraction and optional LLM extraction, then publish the resulting graph into Neo4j.
 
+Distribution and import names are intentionally different:
+
+- PyPI distribution: `autograph-llmneo4j`
+- Python import: `autograph`
+
 ## Current Flow
 
 The end-to-end pipeline currently works like this:
@@ -118,17 +123,11 @@ The same run also showed:
 
 ## Known Issues And Gaps
 
-### Packaging layout is not publish-ready yet
+### Packaging still needs a live publish verification
 
-The repository has a `pyproject.toml`, but the package layout does not currently match the declared package names cleanly.
+The package metadata has been updated for PyPI distribution name `autograph-llmneo4j`, while keeping the Python import path as `autograph`.
 
-Current issue examples:
-
-- `pyproject.toml` declares packages such as `autograph.analyzers`
-- the repo currently stores `analyzers/`, `core/`, `embeddings/`, `loaders/`, `utils/`, and `graph_store/` as top-level folders
-- `autograph.neo4j` is declared, but the actual folder is `graph_store`
-
-Before publishing to PyPI, the package structure should be normalized or the setuptools package mapping should be corrected.
+The repository also includes GitHub Actions for CI and PyPI publishing, but the final verification step depends on successful trusted publishing and a live PyPI release.
 
 ### Environment sensitivity
 
@@ -140,8 +139,7 @@ Live Neo4j runs currently emit many Python 3.14 deprecation warnings from the Ne
 
 ## Suggested Next Steps
 
-1. Normalize the package layout for publishing
+1. Verify the first successful PyPI publish for `autograph-llmneo4j`
 2. Add a workspace-local temporary output strategy for tests if temp-dir flakiness continues
 3. Optionally log LLM-only vs heuristic-only extraction contributions separately
-4. Add a short publish guide after packaging is corrected
-
+4. Add installation examples to the main docs after the first public release

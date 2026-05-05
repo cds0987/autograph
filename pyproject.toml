@@ -3,7 +3,7 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "autograph"
+name = "autograph-llmneo4j"
 version = "0.1.0"
 description = "Dataset-agnostic knowledge graph builder with optional LLM and Neo4j integrations."
 readme = "docs/goals.md"

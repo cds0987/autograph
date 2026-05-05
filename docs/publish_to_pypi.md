@@ -5,7 +5,13 @@
 After this project is pushed to GitHub and linked to PyPI, users should be able to install it with:
 
 ```bash
-pip install autograph
+pip install autograph-llmneo4j
+```
+
+Python imports stay the same:
+
+```python
+from autograph import GraphBuilder
 ```
 
 ## Local Release Steps
@@ -22,7 +28,7 @@ Build and validate the package locally:
 Optionally test install from the built wheel:
 
 ```powershell
-.venv\Scripts\python.exe -m pip install --force-reinstall --no-deps dist\autograph-0.1.0-py3-none-any.whl
+.venv\Scripts\python.exe -m pip install --force-reinstall --no-deps dist\autograph_llmneo4j-0.1.0-py3-none-any.whl
 ```
 
 ## GitHub Actions
@@ -44,7 +50,7 @@ You have two options:
 
 In PyPI:
 
-1. Create the project or reserve the name `autograph`
+1. Create the project or reserve the name `autograph-llmneo4j`
 2. Go to the project publishing settings
 3. Add a trusted publisher for GitHub repository `cds0987/autograph`
 4. Point it to the `publish-pypi.yml` workflow
@@ -70,5 +76,7 @@ If you prefer a token:
 ## Notes
 
 - GitHub repository URL: `https://github.com/cds0987/autograph`
+- PyPI distribution name: `autograph-llmneo4j`
+- Python import package: `autograph`
 - Bump the version in `pyproject.toml` before each release
 - If you add optional providers later, consider using optional dependency groups
