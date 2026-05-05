@@ -42,6 +42,14 @@ This repository includes:
 
 `publish-pypi.yml` builds distributions on release publication and publishes them to PyPI.
 
+It is also configured to auto-run on pushes to `main`.
+
+Important:
+
+- every push to `main` will attempt a PyPI publish
+- PyPI does not allow re-uploading the same version
+- you must bump `version` in `pyproject.toml` before each push to `main` that should publish successfully
+
 ## PyPI Setup
 
 You have two options:
@@ -66,6 +74,14 @@ If you prefer a token:
 3. Update the publish workflow to use that token instead of trusted publishing
 
 ## Release Flow
+
+### Automatic publish from `main`
+
+1. Bump the version in `pyproject.toml`
+2. Commit and push changes to `main`
+3. GitHub Actions builds and publishes the package to PyPI automatically
+
+### Release-based publish
 
 1. Commit and push changes to GitHub
 2. Make sure CI passes

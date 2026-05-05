@@ -8,6 +8,7 @@ anthropic>=0.25.0,<1.0.0
 # Structured config and validation
 pydantic>=2.7.0,<3.0.0
 python-dotenv>=1.0.1,<2.0.0
+structlog>=24.0.0,<26.0.0
 
 # Reliability / UX for batch processing
 tenacity>=8.2.3,<10.0.0
