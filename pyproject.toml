@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "autograph-llmneo4j"
-version = "0.1.1"
+version = "0.1.2"
 description = "Dataset-agnostic knowledge graph builder with optional LLM and Neo4j integrations."
 readme = "docs/goals.md"
 requires-python = ">=3.11"
